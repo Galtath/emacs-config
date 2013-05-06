@@ -228,6 +228,14 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-hook 'ansi-term-mode-hook 'ansi-color-for-comint-mode-on)
 
+;; Eshell, preferred shell
+(require 'eshell)
+
+(defun eshell/clear ()
+  "clear the eshell buffer."
+  (interactive)
+  (let ((inhibit-read-only t))
+    (erase-buffer)))
 
 ;; extra defuns
 (defun iwb()
